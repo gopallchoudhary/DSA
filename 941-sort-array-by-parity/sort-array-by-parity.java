@@ -1,6 +1,5 @@
 class Solution {
     public int[] sortArrayByParity(int[] nums) {
-        Arrays.sort(nums);
         int k = 0;
         int sortedArray[] = new int[nums.length];
         for(int n: nums) {
