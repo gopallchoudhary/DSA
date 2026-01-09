@@ -1,7 +1,7 @@
 import java.util.*;
 class Solution {
     public int distributeCandies(int[] candyType) {
-        Set<Integer> set = new HashSet<>();
+        HashSet<Integer> set = new HashSet<>();
         for(int c: candyType) {
             set.add(c);
         }
