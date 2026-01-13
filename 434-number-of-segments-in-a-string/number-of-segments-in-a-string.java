@@ -1,15 +1,16 @@
 class Solution {
     public int countSegments(String s) {
-        s = s.replaceAll("\\s+", " ").trim();
-        if(s.length() == 0) {
-            return 0;
-        }
+        // s = s.replaceAll("\\s+", " ").trim();
         int count = 0;
-        for(int i=0; i<s.length(); i++) {
-            if(s.charAt(i) == ' ') {
+        boolean inSegment = false;
+        for(char c: s.toCharArray()) {
+            if(c != ' ' && !inSegment) {
                 count++;
+                inSegment = true;
+            } else if(c == ' ') {
+                inSegment = false;
             }
         }
-        return count + 1;
+        return count;
     }
 }
