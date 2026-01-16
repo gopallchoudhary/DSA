@@ -11,20 +11,19 @@ class Solution {
 
             //check for the special character or digit
             if(!Character.isLetterOrDigit(firstChar)) {
-                first++;
+                first++; continue;
             }
 
-            else if(!Character.isLetterOrDigit(lastChar)) {
-                last--;
+            if(!Character.isLetterOrDigit(lastChar)) {
+                last--; continue;
             }
 
-            else {
-                if(Character.toLowerCase(firstChar) != Character.toLowerCase(lastChar)) {
+            
+            if(Character.toLowerCase(firstChar) != Character.toLowerCase(lastChar)) {
                 return false;
-                }
+            }
                 first++;
                 last--;
-            }
         }
         return true;
     }
