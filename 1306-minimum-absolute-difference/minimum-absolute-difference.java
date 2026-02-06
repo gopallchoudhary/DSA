@@ -6,17 +6,13 @@ class Solution {
         int minimum = Integer.MAX_VALUE;
         Arrays.sort(arr);
         for(int i=0; i<n-1; i++) {
-            int diff = Math.abs(arr[i] - arr[i+1]);
-            minimum = Math.min(diff, minimum);
+            minimum = Math.min(arr[i+1] - arr[i], minimum);
         }
 
         for(int i=0; i<n-1; i++) {
-            int currentDiff = arr[i+1] - arr[i];
-            if(currentDiff == minimum) {
-                List<Integer> pair = new ArrayList<>();
-                pair.add(arr[i]);
-                pair.add(arr[i+1]);
-                list.add(pair);
+            
+            if(arr[i+1] - arr[i] == minimum) {
+                list.add(List.of(arr[i], arr[i+1]));
                 
             }
         }
